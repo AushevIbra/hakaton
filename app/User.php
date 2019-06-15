@@ -17,6 +17,8 @@ class User extends Authenticatable
      */
     protected $guarded = [];
 
+    protected $with = ['storages'];
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -34,4 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function storages() {
+        return $this->hasMany(Storage::class);
+    }
 }
