@@ -13,7 +13,7 @@
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">E-mail адрес</label>
-
+                            <input type="hidden" name="change_settings" value="1">
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
 
