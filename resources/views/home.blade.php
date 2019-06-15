@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-  <div id="home"></div>
+<div className="container">
+  <div id="provider-storage"></div>
 </div>
 @endsection
