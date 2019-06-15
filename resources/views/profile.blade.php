@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@if (auth()->user()->role == '0')
 <div class="container">
     <div class="row justify-content-left">
         <div class="col-md-6">
@@ -146,7 +147,7 @@
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Товаров в наличии
-                            <span class="badge badge-primary badge-pill">14</span>
+                            <span class="badge badge-primary badge-pill"></span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Товаров нет в наличии
@@ -158,7 +159,7 @@
                         </li>
                     </ul>
                     <div style="text-align:center; margin-top: 1.9em">
-                        <a href="/goods">
+                        <a href="/products">
                             Перейти к управлению товарами
                         </a>
                     </div>
@@ -221,4 +222,7 @@
         </div>
     </div>
 </div>
+@else
+<div></div>
+@endif
 @endsection
