@@ -18,7 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/profile', 'HomeController@profile')->name('profile')->middleware('profile');
+Route::get('/profile', 'HomeController@profile')->name('profile')->middleware('auth');
 Route::post('/profile', function() {
    return response()->json(['user' => auth()->user()]);
 })->middleware('auth');
+
+
