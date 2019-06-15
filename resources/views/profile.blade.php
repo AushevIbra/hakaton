@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="container">
     <div class="row justify-content-left">
         <div class="col-md-6">
@@ -94,6 +93,9 @@
                             <input type="hidden" name="change_settings" value="1">
                             <div class="col-md-6">
                                 <select id="email" type="email" class="form-control" name="storage" required autofocus>
+                                @foreach(auth()->user()->storages as $storage) 
+                                   <option> {{ $storage->name}}</option>
+                                @endforeach
                                 </select>
                             </div>
                         </div>
@@ -118,7 +120,7 @@
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Активных складов
-                            <span class="badge badge-primary badge-pill">14</span>
+                            <span class="badge badge-primary badge-pill">{{auth()->user()->storages->count()}}</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Активных заказов
