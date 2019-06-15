@@ -19,6 +19,16 @@ class CategoriesTableSeeder extends Seeder {
             'name'      => 'Чай, кофе',
             'parent_id' => 1,
         ]);
+        \App\Category::create([
+            'id'        => 3,
+            'name'      => 'Мясо',
+            'parent_id' => 1,
+        ]);
+        \App\Category::create([
+            'id'        => 4,
+            'name'      => 'Хлеб',
+            'parent_id' => 1,
+        ]);
     }
 }
 
